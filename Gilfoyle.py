@@ -15,10 +15,12 @@ def makeHTTPRequest(url, method, params, headers):
 def main():
 	header={"Accept": "application/json, text/plain, */*", "Content-type": "application/json; charset=UTF-8"};
 	r= makeHTTPRequest("https://api.coindesk.com/v1/bpi/currentprice.json","GET","NaN",header)
-	a= r.json()
-	b=a['bpi']['USD']['rate']
+	jsonresp= r.json()
+	rate=jsonresp['bpi']['USD']['rate']
+	frate = float(rate.replace(',',''))
+	if frate > 3400: #change threshold as needed
+		playsound('ND_yousuffer.mp3) #Jumpscare here 
     
-#    playsound('bsironman.mp3')
 
 if __name__ == '__main__':
     main()
