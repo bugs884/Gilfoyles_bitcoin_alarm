@@ -19,8 +19,7 @@ def main():
 	rate=jsonresp['bpi']['USD']['rate']
 	frate = float(rate.replace(',',''))
 	if frate > 3400: #change threshold as needed
-		playsound('ND_yousuffer.mp3) #Jumpscare here 
-    
+		playsound('ND_yousuffer.mp3') #Jumpscare here 
 
 if __name__ == '__main__':
     main()
